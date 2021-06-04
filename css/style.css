@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css?family=Coming+Soon");
+* {
+  transition: 2s;
+}
+
+html, body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #242026;
+}
+
+label {
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+.hint {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Coming Soon', cursive;
+  margin: 10px auto;
+}
+
+.card {
+  width: 700px;
+  height: 460px;
+  min-width: 700px;
+  min-height: 460px;
+  background-image: linear-gradient(40deg, #fff3d8, #ffd987, #cc921e);
+  background-size: 200% 100%;
+  background-position: 0;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.title {
+  font-family: 'Coming Soon', cursive;
+  font-size: 60px;
+  margin: 40px 45px;
+  color: #4c2a1e;
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+  position: absolute;
+  z-index: 999;
+  -webkit-animation: titleAni 2s infinite;
+          animation: titleAni 2s infinite;
+}
+.title span {
+  display: block;
+  line-height: 1.3;
+}
+
+.cake {
+  width: 260px;
+  height: 65px;
+  position: relative;
+  top: 56%;
+  left: 17%;
+  z-index: 999;
+  margin-left: 100px;
+  margin-right: auto;
+}
+
+.candle-group {
+  width: 20%;
+  height: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.candle-group .light {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+  top: -80%;
+  -webkit-animation: lightAni 1s infinite;
+          animation: lightAni 1s infinite;
+}
+.candle-group .smoke {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.candle-group .smoke:before, .candle-group .smoke:after {
+  content: '';
+  display: none;
+  background-color: rgba(179, 177, 181, 0.8);
+  box-shadow: 0 0 5px rgba(179, 177, 181, 0.8);
+  position: absolute;
+}
+.candle-group .candle {
+  background: #ff593f;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  border: 4px solid #4c2a1e;
+  border-radius: 5px 5px 0 0;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.candle-group .candle:before {
+  content: '';
+  display: block;
+  background: white;
+  width: 100%;
+  height: 35%;
+  -webkit-transform: skewY(-30deg);
+          transform: skewY(-30deg);
+  position: absolute;
+  top: 30%;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.candle-group .candle .fire {
+  width: 130%;
+  height: 45%;
+  position: absolute;
+  background: #ffcc66;
+  top: 0;
+  left: 100%;
+  border-radius: 100% 0 60% 50% / 60% 0 100% 50%;
+  border: 4px solid #4c2a1e;
+  -webkit-transform: translate(-40%, -100%) rotate(-28deg);
+          transform: translate(-40%, -100%) rotate(-28deg);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+  -webkit-animation: fireAni 1s infinite;
+          animation: fireAni 1s infinite;
+}
+
+.cake-top {
+  width: 64%;
+  height: 90%;
+  background-color: #54728c;
+  margin: auto;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  border-top: 4px solid #4c2a1e;
+  border-left: 4px solid #4c2a1e;
+  border-right: 4px solid #4c2a1e;
+  box-shadow: -25px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-top:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 30%;
+  background-color: #85b6bf;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translatey(-50%);
+          transform: translatey(-50%);
+  box-shadow: -25px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.cake-bottom {
+  width: 80%;
+  height: 100%;
+  background-color: #fcdda4;
+  border-radius: 10px 10px 0 0;
+  margin: auto;
+  border-left: 4px solid #4c2a1e;
+  border-right: 4px solid #4c2a1e;
+  border-top: 4px solid #4c2a1e;
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-bottom .butter {
+  width: 100%;
+  height: 55%;
+  background-color: #fc7164;
+  display: flex;
+  position: relative;
+  border-radius: 7px 7px 0 0;
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-bottom .butter .butter-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: relative;
+  top: 40%;
+  background-color: #fc7164;
+}
+.cake-bottom .butter .butter-circle:nth-of-type(6) {
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.plate {
+  width: 100%;
+  height: 20%;
+  border-radius: 10px;
+  background-color: #4c2a1e;
+  left: -50%;
+  box-shadow: -45px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+
+input:checked + .card {
+  background-position: 100%;
+}
+input:checked + .card * {
+  -webkit-filter: brightness(98%);
+          filter: brightness(98%);
+}
+input:checked + .card .candle-group .light {
+  -webkit-animation: lightAni 1s infinite, lightDisappearAni 1s forwards;
+          animation: lightAni 1s infinite, lightDisappearAni 1s forwards;
+}
+input:checked + .card .candle-group .smoke:before, input:checked + .card .candle-group .smoke:after {
+  display: block;
+}
+input:checked + .card .candle-group .smoke:before {
+  width: 20px;
+  height: 20px;
+  top: -60%;
+  left: 35%;
+  border-radius: 50%;
+  -webkit-animation: smokeTopAni 1s forwards;
+          animation: smokeTopAni 1s forwards;
+}
+input:checked + .card .candle-group .smoke:after {
+  width: 80px;
+  height: 5px;
+  top: -10%;
+  left: -100%;
+  border-radius: 10px;
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-animation: smokeLeftAni 1s forwards;
+          animation: smokeLeftAni 1s forwards;
+}
+input:checked + .card .candle-group .candle .fire {
+  -webkit-animation: fireAni 1s infinite, fireDisappearAni 1s forwards;
+          animation: fireAni 1s infinite, fireDisappearAni 1s forwards;
+}
+
+@-webkit-keyframes titleAni {
+  60% {
+    -webkit-transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+            transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+  }
+}
+
+@keyframes titleAni {
+  60% {
+    -webkit-transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+            transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+  }
+}
+@-webkit-keyframes lightAni {
+  60% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+@keyframes lightAni {
+  60% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+@-webkit-keyframes fireAni {
+  0%,100% {
+    -webkit-transform: translate(-40%, -100%) rotate(-28deg);
+            transform: translate(-40%, -100%) rotate(-28deg);
+  }
+  60% {
+    -webkit-transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+            transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+    background: #ffc36b;
+  }
+}
+@keyframes fireAni {
+  0%,100% {
+    -webkit-transform: translate(-40%, -100%) rotate(-28deg);
+            transform: translate(-40%, -100%) rotate(-28deg);
+  }
+  60% {
+    -webkit-transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+            transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+    background: #ffc36b;
+  }
+}
+@-webkit-keyframes lightDisappearAni {
+  0%,69% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+  }
+  70%,100% {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}
+@keyframes lightDisappearAni {
+  0%,69% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+  }
+  70%,100% {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}
+@-webkit-keyframes fireDisappearAni {
+  0%,69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes fireDisappearAni {
+  0%,69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes smokeTopAni {
+  0%,60%,100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    top: -70%;
+    left: 20%;
+  }
+  100% {
+    top: -90%;
+    left: 0%;
+  }
+}
+@keyframes smokeTopAni {
+  0%,60%,100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    top: -70%;
+    left: 20%;
+  }
+  100% {
+    top: -90%;
+    left: 0%;
+  }
+}
+@-webkit-keyframes smokeLeftAni {
+  0%,60%,100% {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  70% {
+    left: -120%;
+    opacity: 1;
+    -webkit-transform: scaleX(1.1);
+            transform: scaleX(1.1);
+  }
+  100% {
+    left: -150%;
+  }
+}
+@keyframes smokeLeftAni {
+  0%,60%,100% {
+    opacity: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  70% {
+    left: -120%;
+    opacity: 1;
+    -webkit-transform: scaleX(1.1);
+            transform: scaleX(1.1);
+  }
+  100% {
+    left: -150%;
+  }
+}
+
+
+button {
+  position: absolute;
+  /* display: block; */
+  /* offset: left; */
+  margin: 25% 10% 40% 40%;
+  background-color: #fc7164;
+  border-radius: 10px;
+  padding: 20px 30px;
+  border: none;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none !important;
+  font-size: 2em;
+  color: white;  
+  font-family: 'Coming Soon', cursive;
+  font-weight: bold;
+}
+
+.inactive {
+  display: none;
+}
+
